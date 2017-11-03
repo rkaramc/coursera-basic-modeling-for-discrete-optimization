@@ -10,3 +10,4 @@ constraint sum(i in DISH)(size[i] * amt[i]) <= capacity;
 solve maximize sum(i in DISH)(satisf[i] * amt[i]);
 
 output ["Amount = ", show(amt), "\n"];
+output ["Satisfaction = ", show(sum(i in DISH)(satisf[i] * amt[i])), "\n"];
