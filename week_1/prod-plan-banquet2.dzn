@@ -1,0 +1,11 @@
+PRODUCT = {CHILIFISHHEAD, SAUSAGE, SEACUCUMBER, CHICKEN, FRIEDRICE};
+profit = [18.0, 16.0, 14.0, 13.0, 6.0];
+
+RESOURCE = {TABLESPACE};
+capacity = [70.0];
+
+consumption = [| 12.0
+               | 10.0
+               | 9.0
+               | 8.0
+               | 4.0 |];
