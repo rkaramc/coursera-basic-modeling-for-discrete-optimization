@@ -9,3 +9,16 @@ int: m; % minimum joint ability
 
 array[NEGOTIATOR] of int: honor;
 array[NEGOTIATOR,NEGOTIATOR] of int: joint;
+
+var set of NEGOTIATOR: party;
+constraint card(party) >= l;
+constraint card(party) <= u;
+
+constraint sum(i, j in party where i < j)(joint[i,j]) >= m;
+
+var int: minhonor;
+constraint minhonor = min([honor[i] | i in party]);
+
+solve maximize minhonor;
+
+output ["party = ", show(party), ";\n", "min honor = ", show(minhonor), ";\n"];
